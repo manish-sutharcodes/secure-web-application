@@ -1,0 +1,244 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* PAGE BACKGROUND */
+/* BACKGROUND */
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* CENTER CONTAINER */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* CARD */
+.auth-card h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 29px;
+  font-weight: 700;
+}
+
+
+/* INPUT */
+.auth-card input {
+  
+  width: 100%;
+  padding: 19px;
+  margin-bottom: 26px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 19px;
+}
+
+/* PASSWORD WRAPPER */
+.password-group {
+  position: relative;
+}
+
+/* EXTRA SPACE FOR EYE */
+.password-group input {
+  padding-right: 48px;
+}
+
+/* EYE ICON */
+.eye {
+  position: absolute;
+  right: 14px;
+  top: 35%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+}
+
+/* BUTTON */
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+/* LINK */
+.auth-link {
+  display: block;
+  margin-top: 14px;
+  color: #7ecbff;
+  text-decoration: none;
+}
+
+/* CREATE ACCOUNT LINK */
+.container a {
+    display: block;
+    margin-top: 12px;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   DASHBOARD STYLES
+========================= */
+
+body {
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    min-height: 100vh;
+}
+
+/* Center Dashboard */
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Card */
+.security-card {
+    width: 520px;
+    background: linear-gradient(145deg, #020617, #020617);
+    padding: 30px;
+    border-radius: 14px;
+    color: #e5e7eb;
+    box-shadow:
+        0 0 25px rgba(37, 99, 235, 0.6),
+        inset 0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Heading */
+.security-card h2 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* User Info */
+.user-info p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+/* Admin/User Box */
+.admin-box,
+.user-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 4px solid #22d3ee;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 6px;
+}
+
+.admin-box h3,
+.user-box h3 {
+    color: #facc15;
+    margin-bottom: 10px;
+}
+
+.admin-box ul,
+.user-box ul {
+    padding-left: 18px;
+}
+
+.admin-box li,
+.user-box li {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+/* Logout Button */
+.logout-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #fb7185, #f43f5e);
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    opacity: 0.9;
+}
+
+#session-timer {
+    color: #22d3ee;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ================= FAKE SOC STYLES ================= */
+
+.soc-card {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #0f172a;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+    color: #e5e7eb;
+}
+
+.soc-card h3 {
+    margin-bottom: 12px;
+    color: #38bdf8;
+}
+
+.soc-logs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.soc-logs li {
+    padding: 6px 10px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+}
+
+/* Log Types */
+.soc-logs .info {
+    background: #1e293b;
+    color: #38bdf8;
+}
+
+.soc-logs .warning {
+    background: #3b2f1e;
+    color: #facc15;
+}
+
+.soc-logs .critical {
+    background: #3b1e1e;
+    color: #f87171;
+    font-weight: bold;
+}

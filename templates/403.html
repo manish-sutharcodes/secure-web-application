@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>403 - Access Denied</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #020617;
+            color: #e5e7eb;
+            font-family: Arial, sans-serif;
+        }
+
+        .error-card {
+            text-align: center;
+            background: #020617;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(239,68,68,0.4);
+            width: 420px;
+        }
+
+        .error-card h1 {
+            font-size: 48px;
+            color: #ef4444;
+            margin-bottom: 10px;
+        }
+
+        .error-card h2 {
+            color: #f87171;
+            margin-bottom: 15px;
+        }
+
+        .error-card p {
+            color: #cbd5f5;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="error-card">
+    <h1>403</h1>
+    <h2>Access Denied</h2>
+    <p>This area is restricted.</p>
+    <p><strong>Admin privileges required.</strong></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Security Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="dashboard-container">
+    <div class="security-card">
+
+        <h2>🛡 Admin Security Panel</h2>
+
+        <p><strong>Admin:</strong> {{ admin }}</p>
+        <p><strong>Access Level:</strong> FULL</p>
+        <p><strong>RBAC:</strong> Active</p>
+
+        <hr>
+
+        <h3>👥 Registered Users</h3>
+
+        <table style="width:100%; color:#e5e7eb;">
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Role</th>
+            </tr>
+
+            {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a href="{{ url_for('auth.logout') }}" class="logout-btn">Logout</a>
+
+    </div>
+</div>
+
+</body>
+</html>

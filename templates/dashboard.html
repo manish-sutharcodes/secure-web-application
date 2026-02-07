@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body> 
+<!-- ================= USER INFO ================= -->
+<div class="dashboard-container">
+    <div class="security-card">
+        <div class="user-info">
+            <p><strong>Role:</strong> {{ role | upper }}</p>
+            <p><strong>Session Status:</strong> Active</p>
+
+            <p>
+                <strong>Session Duration:</strong>
+                <span id="session-timer">00:00:00</span>
+            </p>
+
+            <p>
+                <strong>Session ID:</strong>
+                {{ request.cookies.get('session')[:20] }}...
+            </p>
+        </div>
+
+        <!-- ================= ROLE BASED BLOCK ================= -->
+        {% if role == "admin" %}
+
+        <!-- ADMIN PRIVILEGES -->
+        <div class="admin-box">
+            <h3>Admin Privileges Enabled</h3>
+            <ul>
+                <li>User Management Access</li>
+                <li>Security Logs Visibility</li>
+                <li>Incident Review Permission</li>
+            </ul>
+        </div>
+
+        <!-- FAKE SOC PANEL -->
+        <div class="soc-card">
+            <h3>🛡️ SOC Monitoring Panel (Admin Only)</h3>
+            <ul class="soc-logs">
+                <li class="info">[INFO] SOC initialized</li>
+                <li class="warning">[WARNING] RBAC enforcement active</li>
+                <li class="critical">[CRITICAL] Unauthorized admin access blocked</li>
+            </ul>
+        </div>
+
+        {% else %}
+
+        <!-- NORMAL USER -->
+        <div class="user-box">
+            <h3>User Access Level</h3>
+            <ul>
+                <li>Authenticated Session</li>
+                <li>Restricted Privileges</li>
+                <li>Role-Based Access Control Active</li>
+            </ul>
+        </div>
+
+        {% endif %}
+
+        <a href="{{ url_for('auth.logout') }}" class="logout-btn">Logout</a>
+    </div>
+</div>
+<script>
+  let seconds = 0;
+
+  function startSessionTimer() {
+    setInterval(() => {
+      seconds++;
+
+      let hrs = Math.floor(seconds / 3600);
+      let mins = Math.floor((seconds % 3600) / 60);
+      let secs = seconds % 60;
+
+      document.getElementById("session-timer").innerText =
+        String(hrs).padStart(2, "0") + ":" +
+        String(mins).padStart(2, "0") + ":" +
+        String(secs).padStart(2, "0");
+    }, 1000);
+  }
+
+  startSessionTimer();
+</script>
+<script src="{{ url_for('static', filename='js/soc.js') }}"></script>
+<script src="{{ url_for('static', filename='js/session_timer.js') }}"></script>
+</body>
+</html>
+
+

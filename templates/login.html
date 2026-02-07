@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="auth-card">
+        <h2>Login</h2>
+
+        
+        <form method="POST" action="{{ url_for('auth.login') }}">
+
+            <div class="form-group">
+                <input type="username" name="username" placeholder="username" required>
+            </div>
+
+            <div class="password-group">
+                <input type="password" name="password" id="loginPassword" placeholder="Password" required>
+                <span class="eye" id="loginEye">👁</span>
+            </div>
+
+            <button type="submit" class="auth-btn">Login</button>
+
+        </form>
+
+        <a href="{{ url_for('auth.register') }}" class="auth-link">
+            Create account
+        </a>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+</body>
+</html>
